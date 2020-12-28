@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="Ναυμαχία" content="width=device-width, initial-scale=1">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1"-->
+    <title>Ναυμαχία</title>
+</head>
+
+<body>
+    <p>Γεια σου {{g.user[1]}}</p>
+    <p>Το χρώμα σου είναι {{g.color}}</p>
+    <p>Δώστε θέση στη συστοιχία LED.</p>
+    <p>(αν δώσετε στον οριζόντιο άξονα τιμή άνω του 7</p>
+    <p>η ναυμαχία ξεκινά από την αρχή):</p>
+    <!--θα δώσετε και τιμή στο y από 0 μέχρι 7,διαφορετικά θα σκάσει,εδώ δεν κάνω αμυντικό προγραμματισμό,στο άλλο-->
+    <form method="POST">
+        <p>
+            <input type="text" name="x" size="7" placeholder="Οριζόντια x" />
+            <input type="text" name="y" size="7" placeholder="Κάθετα y" />
+            <button type="submit">ΑΠΟΣΤΟΛΗ στο Sense-HAT</button>
+            <p>{{g.comment}}</p>
+            <p>Στατιστικά:</p>
+            <p>΄Εως τώρα έχουν χρωματιστεί:</p>
+            <p>{{g.red}} ΚΟΚΚΙΝΑ LED και</p>
+            <p>{{g.blue}} ΜΠΛΕ LED</p>
+            <p>To ΜΠΛΕ έχει πέτυχει {{g.bluesuc}} πλοία.</p>
+            <p>To ΚΟΚΚΙΝΟ έχει πέτυχει {{g.redsuc}} πλοία.</p>
+	    
+	    <p>
+                {%if g.green>0 %} Απομένουν {{g.green}} πλοία (με πράσινο χρώμα). {%else %} Το παιχνίδι τελείωσε{% endif %}
+            </p>
+            <p>{%if not g.active_game %} Η θέση {{g.point}} είναι είδη ενεργή από τον {% if g.color == "ΜΠΛΕ"%} ΜΠΛΕ {%else %} ΚΟΚΚΙΝΟ {% endif %} {% else %} Ξεκίνησε το παιχνίδι με x>7 {% endif %}
+            </p>
+
+            <p><a href="/bonus_ships">Ανανέωση</a></p>
+            <p><a href="/">Αρχική σελίδα</a></p>
+        </p>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="Ναυμαχία" content="width=device-width, initial-scale=1">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1"-->
+    <title>Ναυμαχία</title>
+</head>
+
+<body>
+    <p>Γεια σου {{g.user[1]}}</p>
+    <!--<p>Το χρώμα σου είναι {{g.color}}</p>-->
+    <p>Δώστε θέση στη συστοιχία LED.</p>
+    <p>(αν δώσετε στον οριζόντιο άξονα τιμή άνω του 7</p>
+    <p>η ναυμαχία ξεκινά από την αρχή):</p>
+    <!--θα δώσετε και τιμή στο y από 0 μέχρι 7,διαφορετικά θα σκάσει,εδώ δεν κάνω αμυντικό προγραμματισμό,στο άλλο-->
+    <form method="POST">
+        <p>
+            <input type="text" name="x" size="6" placeholder="Οριζόντια x" />
+            <input type="text" name="y" size="6" placeholder="Κάθετα y" />
+            <button type="submit">ΑΠΟΣΤΟΛΗ στο Sense-HAT</button>
+	    <p><a href="/ships">Ανανέωση</a></p>
+	    <p><a href="/">Αρχική σελίδα</a></p>
+        </p>
+    </form>
+</body>
+
+</html>
